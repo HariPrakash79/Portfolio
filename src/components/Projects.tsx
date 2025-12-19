@@ -5,48 +5,54 @@ import { useInView } from "@/hooks/useInView";
 const projects = [
   {
     id: 1,
-    title: "Hierarchical Bayesian Media Mix Modeling",
+    title: "Hierarchical Bayesian Media Mix Modeling (MMM)",
     domain: "Marketing Analytics",
     icon: TrendingUp,
     description:
-      "Developed a multi-market hierarchical Bayesian media mix model using PyMC to quantify the causal impact of marketing channels on revenue across 50+ markets.",
+      "Built a hierarchical Bayesian Media Mix Model in PyMC to estimate channel-level effectiveness across ~170 U.S. DMAs, capturing geographic heterogeneity and uncertainty for ROI and scenario analysis.",
     impact: [
-      "Informed $20M+ annual marketing budget allocation",
-      "Identified 30% efficiency gains in underperforming channels",
-      "Reduced model uncertainty by 40% vs. traditional approaches",
+      "Integrated weekly sales + multi-channel spend with contextual DMA-level features for geo-level inference",
+      "Modeled carryover and diminishing returns via adstock and saturation (Hill-type) transformations",
+      "Validated performance using rolling time-based splits and produced interpretable channel contribution estimates",
     ],
-    technologies: ["Python", "PyMC", "NumPyro", "SQL", "Snowflake"],
+    technologies: ["Python", "PyMC", "Pandas", "NumPy", "SQL"],
     accentColor: "from-primary/20 to-primary/5",
+    codeUrl: "https://github.com/HariPrakash79",
+    detailsUrl: "https://www.linkedin.com/in/hariprakashkarthikeyan",
   },
   {
     id: 2,
-    title: "Healthcare EHR Analytics & Cardiac Phenotyping",
+    title: "EHR Analytics & Cardiac Phenotyping from Echo Notes",
     domain: "Healthcare Data Science",
     icon: Activity,
     description:
-      "Built patient journey analytics and phenotyping algorithms on large-scale EHR data to support cardiovascular clinical trials at Novartis.",
+      "Created an analysis-ready patient-level dataset from fragmented EHR/REDCap sources and extracted clinically meaningful cardiac phenotypes from unstructured echocardiogram narratives using robust rule-based NLP.",
     impact: [
-      "Processed 10M+ patient records for cohort identification",
-      "Reduced trial enrollment time by 25%",
-      "Developed reusable phenotyping framework adopted across teams",
+      "Merged datasets via MRN-based linkage with admission–discharge temporal alignment for episode-level matching",
+      "Extracted numeric and qualitative findings (e.g., LVEF, wall motion abnormalities, valvular disease) using regex + context/negation logic",
+      "Restructured repeated labs into patient-centric formats while preserving timestamps for downstream statistical analysis",
     ],
-    technologies: ["PySpark", "Databricks", "SQL", "R", "SAS"],
+    technologies: ["Python", "Pandas", "Regex/NLP", "SQL"],
     accentColor: "from-green-500/20 to-green-500/5",
+    codeUrl: "https://github.com/HariPrakash79",
+    detailsUrl: "https://www.linkedin.com/in/hariprakashkarthikeyan",
   },
   {
     id: 3,
-    title: "Large-Scale Solar & CPS Analytics Dashboard",
-    domain: "Energy & IoT Analytics",
+    title: "SolarEdge + CPS Analytics Dashboard (468+ Sites)",
+    domain: "Data Analytics & Dashboards",
     icon: Sun,
     description:
-      "Designed and built an interactive analytics dashboard for solar energy production and cyber-physical system monitoring using real-time sensor data.",
+      "Built a unified Streamlit + Plotly dashboard to monitor, visualize, and compare energy performance across SolarEdge API sites and CPS Excel-based sites with outage detection and forecast comparison.",
     impact: [
-      "Real-time monitoring of 500+ solar panel sensors",
-      "Anomaly detection reduced downtime by 15%",
-      "Stakeholder-friendly visualizations improved decision speed",
+      "Automated SolarEdge data ingestion via Monitoring API and removed the need for manual site-by-site CSV handling",
+      "Implemented dynamic directory scanning and multi-year merging for CPS .xlsx files per site",
+      "Added outage detection, trend views, and predicted-vs-actual comparisons with error metrics (MAE/RMSE)",
     ],
-    technologies: ["Python", "Tableau", "Power BI", "Streamlit", "AWS"],
+    technologies: ["Python", "Streamlit", "Plotly", "Pandas", "REST APIs"],
     accentColor: "from-yellow-500/20 to-yellow-500/5",
+    codeUrl: "https://github.com/HariPrakash79",
+    detailsUrl: "https://www.linkedin.com/in/hariprakashkarthikeyan",
   },
 ];
 
@@ -60,7 +66,11 @@ export function Projects() {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className={`text-center max-w-2xl mx-auto mb-16 ${isInView ? "animate-fade-in-up" : "opacity-0"}`}>
+        <div
+          className={`text-center max-w-2xl mx-auto mb-16 ${
+            isInView ? "animate-fade-in-up" : "opacity-0"
+          }`}
+        >
           <span className="text-primary font-mono text-sm tracking-wider uppercase">
             Portfolio
           </span>
@@ -68,8 +78,8 @@ export function Projects() {
             Featured <span className="text-primary">Projects</span>
           </h2>
           <p className="text-muted-foreground">
-            A selection of impactful projects showcasing my expertise in Bayesian 
-            modeling, healthcare analytics, and data-driven decision making.
+            A selection of projects spanning Bayesian modeling, healthcare EHR
+            analytics, and dashboard-driven decision support.
           </p>
         </div>
 
@@ -84,7 +94,9 @@ export function Projects() {
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Gradient accent */}
-              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.accentColor}`} />
+              <div
+                className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.accentColor}`}
+              />
 
               <div className="p-8 md:p-10">
                 <div className="flex flex-col lg:flex-row gap-8">
@@ -128,10 +140,13 @@ export function Projects() {
                     <h4 className="text-sm font-mono text-primary uppercase tracking-wider">
                       Key Impact
                     </h4>
-                    <ul className="space-y-3">
+                    <ul className="space-y-3 text-left">
                       {project.impact.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                        <li
+                          key={i}
+                          className="relative pl-4 text-sm text-muted-foreground leading-relaxed"
+                        >
+                          <span className="absolute left-0 top-2 w-1.5 h-1.5 rounded-full bg-primary" />
                           {item}
                         </li>
                       ))}
@@ -140,20 +155,35 @@ export function Projects() {
                     {/* Action Buttons */}
                     <div className="flex gap-3 pt-4">
                       <Button
+                        asChild
                         size="sm"
                         variant="outline"
                         className="border-primary/50 text-primary hover:bg-primary/10 gap-2"
                       >
-                        <Github size={16} />
-                        Code
+                        <a
+                          href={project.codeUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github size={16} />
+                          Code
+                        </a>
                       </Button>
+
                       <Button
+                        asChild
                         size="sm"
                         variant="outline"
                         className="border-border text-muted-foreground hover:bg-secondary gap-2"
                       >
-                        <ExternalLink size={16} />
-                        Details
+                        <a
+                          href={project.detailsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink size={16} />
+                          Details
+                        </a>
                       </Button>
                     </div>
                   </div>

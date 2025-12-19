@@ -8,22 +8,22 @@ const contactLinks = [
   {
     icon: Mail,
     label: "Email",
-    value: "hariprakash@example.com",
-    href: "mailto:hariprakash@example.com",
+    value: "hariprakashkarthikeyanslm@gmail.com",
+    href: "mailto:hariprakashkarthikeyanslm@gmail.com",
     copyable: true,
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "/in/hariprakash-k",
-    href: "https://linkedin.com/in/hariprakash-k",
+    value: "Hariprakash Karthikeyan",
+    href: "https://www.linkedin.com/in/hariprakashkarthikeyan/",
     copyable: false,
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "@hariprakash-k",
-    href: "https://github.com/hariprakash-k",
+    value: "@HariPrakash79",
+    href: "https://github.com/HariPrakash79",
     copyable: false,
   },
 ];

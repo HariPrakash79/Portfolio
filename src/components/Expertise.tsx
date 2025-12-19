@@ -9,18 +9,18 @@ const expertiseCategories = [
   },
   {
     icon: Brain,
-    title: "Python Ecosystem",
+    title: "AI / Python Ecosystem",
     skills: ["PyMC", "NumPyro", "scikit-learn", "Pandas", "TensorFlow"],
   },
   {
     icon: Database,
-    title: "Data & MLOps",
+    title: "Data, AI & MLOps",
     skills: ["Snowflake", "Databricks", "AWS", "Docker", "MLflow"],
   },
   {
     icon: BarChart3,
     title: "Statistical Methods",
-    skills: ["Bayesian Inference", "Causal Inference", "Time Series", "A/B Testing"],
+    skills: ["Bayesian Inference", "Machine Learning", "Causal Inference", "Time Series", "A/B Testing"],
   },
   {
     icon: LineChart,
@@ -30,7 +30,7 @@ const expertiseCategories = [
   {
     icon: Layers,
     title: "Domain Expertise",
-    skills: ["Marketing Mix Modeling", "Patient Analytics", "Clinical Trials", "EHR Data"],
+    skills: ["Marketing Mix Modeling", "Healthcare Analytics", "Applied AI", "NLP", "EHR Data", "Clinical Trials"],
   },
 ];
 
@@ -41,15 +41,22 @@ export function Expertise() {
     <section id="expertise" className="py-24 bg-secondary/30 relative" ref={ref}>
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px)`,
-          backgroundSize: "40px 40px",
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px)`,
+            backgroundSize: "40px 40px",
+          }}
+        />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className={`text-center max-w-2xl mx-auto mb-16 ${isInView ? "animate-fade-in-up" : "opacity-0"}`}>
+        <div
+          className={`text-center max-w-2xl mx-auto mb-16 ${
+            isInView ? "animate-fade-in-up" : "opacity-0"
+          }`}
+        >
           <span className="text-primary font-mono text-sm tracking-wider uppercase">
             Skills & Tools
           </span>
@@ -57,8 +64,8 @@ export function Expertise() {
             Core <span className="text-primary">Expertise</span>
           </h2>
           <p className="text-muted-foreground">
-            A comprehensive toolkit spanning statistical modeling, data engineering, 
-            and visualization—built through years of hands-on experience.
+            A comprehensive toolkit spanning AI, statistical modeling, data engineering,
+            and visualization—built through hands-on experience.
           </p>
         </div>
 

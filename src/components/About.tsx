@@ -44,10 +44,12 @@ export function About() {
               <span className="text-primary font-mono text-sm tracking-wider uppercase">
                 About Me
               </span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold">
-                Turning Data into{" "}
-                <span className="text-primary">Actionable Insights</span>
-              </h2>
+             <h2 className="text-3xl md:text-4xl font-display font-bold">
+  Turning Data into{" "}
+  <span className="text-primary">Decisions People Trust</span>
+</h2>
+
+              
             </div>
 
             <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -57,12 +59,23 @@ export function About() {
                 intersection of Bayesian inference, marketing analytics, and healthcare 
                 data science.
               </p>
-              <p>
-                At Novartis, I've developed multi-market patient journey models and 
-                optimized cardiovascular clinical trials. Previously at Epsilon, I built 
-                hierarchical Bayesian media mix models that directly informed multi-million 
-                dollar marketing decisions.
-              </p>
+          <p>
+  At the <span className="text-foreground">University of Rochester Medical Center</span>,
+  I worked with large-scale EHR and REDCap data, building analysis-ready
+  patient-level datasets and extracting clinically meaningful cardiac
+  phenotypes from unstructured echocardiogram narratives using robust
+  rule-based NLP.
+</p>
+
+<p>
+  Separately, I developed a{" "}
+  <span className="text-foreground">Hierarchical Bayesian Media Mix Model</span>{" "}
+  using <span className="text-foreground">PyMC</span> to estimate channel-level
+  effectiveness across markets, explicitly accounting for geographic
+  heterogeneity, adstock (carryover effects), and saturation.
+</p>
+
+
               <p>
                 I thrive on transforming ambiguous problems into structured analytical 
                 frameworks and communicating technical findings to stakeholders across 

@@ -1,6 +1,7 @@
 import { Rocket, BarChart3, Brain, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useInView } from "@/hooks/useInView";
+import resumePdf from "@/assets/Hariprakash_Karthikeyan_Resume.pdf";
 
 const capabilities = [
   {
@@ -68,15 +69,21 @@ export function WorkWithMe() {
                 </a>
               </Button>
               <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-primary/50 text-primary hover:bg-primary/10"
-              >
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  Download Resume
-                </a>
-              </Button>
+  asChild
+  size="lg"
+  variant="outline"
+  className="border-primary/50 text-primary hover:bg-primary/10"
+>
+  <a
+    href={resumePdf}
+    target="_blank"
+    rel="noopener noreferrer"
+    download
+  >
+    Download Resume
+  </a>
+</Button>
+
             </div>
           </div>
 
