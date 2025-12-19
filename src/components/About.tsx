@@ -5,13 +5,13 @@ const highlights = [
   {
     icon: GraduationCap,
     label: "Education",
-    value: "MS Business Analytics",
-    sublabel: "University of Texas, Dallas",
+    value: "MS Data Science",
+    sublabel: "University of Rochester, NY",
   },
   {
     icon: Briefcase,
     label: "Experience",
-    value: "4+ Years",
+    value: "1+ Years",
     sublabel: "Data Science & Analytics",
   },
   {
