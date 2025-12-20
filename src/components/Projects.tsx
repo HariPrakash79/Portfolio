@@ -1,6 +1,11 @@
 import { ExternalLink, Github, TrendingUp, Activity, Sun, Twitter, CarTaxiFront } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useInView } from "@/hooks/useInView";
+import mmmReport from "@/assets/report_capstone.pdf";
+import ehrReport from "@/assets/report_crd.pdf";
+import solarReport from "@/assets/solar_report.pdf";
+import twitterReport from "@/assets/Final_Report_DSS.pdf";
+import taxiReport from "@/assets/report_nsa.pdf";
 
 const projects = [
   {
@@ -18,7 +23,7 @@ const projects = [
     technologies: ["Python", "PyMC", "Pandas", "NumPy", "SQL"],
     accentColor: "from-primary/20 to-primary/5",
     codeUrl: "https://github.com/HariPrakash79",
-    detailsUrl: "https://www.linkedin.com/in/hariprakashkarthikeyan",
+    detailsUrl: mmmReport,
   },
   {
     id: 2,
@@ -35,10 +40,26 @@ const projects = [
     technologies: ["Python", "Pandas", "Regex/NLP", "SQL"],
     accentColor: "from-green-500/20 to-green-500/5",
     codeUrl: "https://github.com/HariPrakash79",
-    detailsUrl: "https://www.linkedin.com/in/hariprakashkarthikeyan",
+    detailsUrl: ehrReport,
   },
   {
-    id: 3,
+  id: 3,
+  title: "Uber & NYC Taxi Network Analysis",
+  domain: "Urban Mobility & Network Science",
+  icon: CarTaxiFront,
+  description:
+    "Analyzed large-scale NYC taxi and ride-hailing data using network science to uncover mobility patterns, demand hubs, and structural inefficiencies in urban transportation.",
+  impact: [
+    "Modeled spatiotemporal ride data as transportation networks",
+    "Identified high-traffic hubs and congestion-prone regions",
+    "Extracted interpretable network metrics for urban mobility insights",
+  ],
+  technologies: ["Python", "Pandas", "NetworkX", "NumPy", "Geospatial Analysis"],
+  codeUrl: "https://github.com/HariPrakash79/Uber_Taxi_Network_Analysis",
+  detailsUrl: taxiReport,
+},
+  {
+    id: 4,
     title: "SolarEdge + CPS Analytics Dashboard (468+ Sites)",
     domain: "Data Analytics & Dashboards",
     icon: Sun,
@@ -52,12 +73,12 @@ const projects = [
     technologies: ["Python", "Streamlit", "Plotly", "Pandas", "REST APIs"],
     accentColor: "from-yellow-500/20 to-yellow-500/5",
     codeUrl: "https://github.com/HariPrakash79",
-    detailsUrl: "https://www.linkedin.com/in/hariprakashkarthikeyan",
+    detailsUrl: solarReport,
   },
 
 
 {
-  id: 4,
+  id: 5,
   title: "Streaming Twitter Sentiment Analysis",
   domain: "Real-Time Data Processing",
   icon: Twitter,
@@ -70,25 +91,10 @@ const projects = [
   ],
   technologies: ["Python", "PySpark", "Databricks", "Delta Lake"],
   codeUrl: "https://github.com/HariPrakash79/Twitter_sentiment_analysis",
-  detailsUrl: "https://www.linkedin.com/in/hariprakashkarthikeyan",
+  detailsUrl: twitterReport,
 },
 
-{
-  id: 5,
-  title: "Uber & NYC Taxi Network Analysis",
-  domain: "Urban Mobility & Network Science",
-  icon: CarTaxiFront,
-  description:
-    "Analyzed large-scale NYC taxi and ride-hailing data using network science to uncover mobility patterns, demand hubs, and structural inefficiencies in urban transportation.",
-  impact: [
-    "Modeled spatiotemporal ride data as transportation networks",
-    "Identified high-traffic hubs and congestion-prone regions",
-    "Extracted interpretable network metrics for urban mobility insights",
-  ],
-  technologies: ["Python", "Pandas", "NetworkX", "NumPy", "Geospatial Analysis"],
-  codeUrl: "https://github.com/HariPrakash79/Uber_Taxi_Network_Analysis",
-  detailsUrl: "https://www.linkedin.com/in/hariprakashkarthikeyan",
-}
+
 
 ];
 

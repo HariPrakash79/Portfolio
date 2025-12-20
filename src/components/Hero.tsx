@@ -2,11 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Github, Linkedin, FileText, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Use your illustration avatar here
 import profilePhoto from "@/assets/cartoon-portfolio.png";
 import resumePdf from "@/assets/Hariprakash_Karthikeyan_Resume.pdf";
-
-
 
 type Badge = {
   label: string;
@@ -22,56 +19,46 @@ const floatingBadges: Badge[] = [
   { label: "SQL", position: "bottom-[6%] right-[6%]", delayMs: 600 },
 ];
 
+
 export function Hero() {
   const targetRef = useRef<HTMLDivElement | null>(null);
 
   const [inView, setInView] = useState(false);
   const [cycleKey, setCycleKey] = useState(0);
-
   const [showBadges, setShowBadges] = useState(false);
   const [fadeBadges, setFadeBadges] = useState(false);
 
   const timersRef = useRef<number[]>([]);
   const prevInViewRef = useRef(false);
 
-  // 1) Real IntersectionObserver
+  // Intersection observer
   useEffect(() => {
     const el = targetRef.current;
     if (!el) return;
 
     const obs = new IntersectionObserver(
-      ([entry]) => {
-        setInView(entry.isIntersecting);
-      },
-      {
-        // These settings make "leave view" happen reliably
-        threshold: 0.6,
-        root: null,
-        rootMargin: "0px",
-      }
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.6 }
     );
 
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
 
-  // 2) Detect re-entry (false -> true) and restart cycle
+  // Detect re-entry
   useEffect(() => {
-    const wasInView = prevInViewRef.current;
-
-    if (!wasInView && inView) {
+    if (!prevInViewRef.current && inView) {
       setCycleKey((k) => k + 1);
     }
-
     prevInViewRef.current = inView;
   }, [inView]);
 
-  // 3) Badge cycle (show ~5s, fade near end)
+  // Badge timing cycle
   useEffect(() => {
-    timersRef.current.forEach((t) => window.clearTimeout(t));
+    timersRef.current.forEach(clearTimeout);
     timersRef.current = [];
 
-    if (cycleKey === 0) return;
+    if (!cycleKey) return;
 
     setShowBadges(true);
     setFadeBadges(false);
@@ -84,10 +71,7 @@ export function Hero() {
 
     timersRef.current.push(t1, t2);
 
-    return () => {
-      timersRef.current.forEach((t) => window.clearTimeout(t));
-      timersRef.current = [];
-    };
+    return () => timersRef.current.forEach(clearTimeout);
   }, [cycleKey]);
 
   return (
@@ -105,6 +89,7 @@ export function Hero() {
 
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="flex flex-col items-center text-center">
+
           {/* Availability */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-8 animate-fade-in-up">
             <span className="relative flex h-2 w-2">
@@ -116,19 +101,65 @@ export function Hero() {
             </span>
           </div>
 
-          {/* Avatar + badges wrapper */}
+          {/* Avatar */}
           <div className="relative mb-10 animate-scale-in" ref={targetRef}>
-            {/* Glow behind avatar */}
             <div className="absolute inset-0 bg-primary/25 rounded-full blur-3xl scale-110" />
 
-            {/* Circular avatar */}
             <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border border-primary/30 bg-card/40 backdrop-blur-sm shadow-lg">
+
+            
+{/* Circular avatar */}
+<div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border border-primary/30 bg-card/40 backdrop-blur-sm shadow-lg">
+
+{/* Orbiting symbols around HEAD (not the whole circle) */}
+<div className="orbit-anchor pointer-events-none">
+  <div className="orbit-center">
+    <div className="orbit-rotator">
+      {["ML", "AI", "Σ", "β", "μ", "SQL", "Py", "∫"].map((item, i, arr) => {
+        const deg = (360 / arr.length) * i;
+        return (
+          <span
+            key={i}
+            className="orbit-symbol"
+            style={{
+             transform: `rotateY(${deg}deg) translateZ(var(--orbit-radius)) rotateY(${-deg}deg)`,
+
+              animationDelay: `${i * 0.2}s`,
+            }}
+          >
+            {item}
+          </span>
+        );
+      })}
+    </div>
+  </div>
+</div>
+
+
+
+  {/* Avatar image */}
+  <img
+    src={profilePhoto}
+    alt="Hariprakash Karthikeyan"
+    className="w-full h-full object-cover object-center"
+  />
+
+  {/* Blend overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-background/45 via-transparent to-transparent" />
+</div>
+
+
+
+
+
+
+
               <img
                 src={profilePhoto}
                 alt="Hariprakash Karthikeyan"
                 className="w-full h-full object-cover object-center"
               />
-              {/* Blend overlay */}
+
               <div className="absolute inset-0 bg-gradient-to-t from-background/45 via-transparent to-transparent" />
             </div>
 
@@ -141,7 +172,7 @@ export function Hero() {
                 }`}
                 style={{ transitionDelay: `${badge.delayMs}ms` }}
               >
-                <div className="px-4 py-2 bg-card/90 backdrop-blur-sm border border-primary/30 rounded-full text-sm font-medium text-foreground shadow-lg whitespace-nowrap">
+                <div className="px-4 py-2 bg-card/90 backdrop-blur-sm border border-primary/30 rounded-full text-sm font-medium shadow-lg">
                   {badge.label}
                 </div>
               </div>
@@ -160,81 +191,44 @@ export function Hero() {
             <span className="text-primary/80">|</span> AI Engineer
           </p>
 
-          {/* Intro + summary */}
+          {/* Summary */}
           <div className="max-w-2xl animate-fade-in-up">
             <p className="text-base md:text-lg text-muted-foreground/90">
               I build reliable, decision-grade analytics from complex data.
             </p>
             <p className="mt-4 text-base md:text-lg text-muted-foreground/80 leading-relaxed">
-              My work spans hierarchical Bayesian media mix modeling for marketing ROI,
-              rule-based NLP for cardiac phenotyping from EHR narratives, and analytics
-              dashboards that turn messy, multi-source data into usable insights.
+              My work spans hierarchical Bayesian media mix modeling, rule-based NLP
+              for cardiac phenotyping, and analytics dashboards that turn messy
+              multi-source data into usable insights.
             </p>
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-wrap gap-4 justify-center mt-10 animate-fade-in-up">
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 box-glow"
-            >
+          <div className="flex gap-4 justify-center mt-10 animate-fade-in-up">
+            <Button asChild size="lg">
               <a href="#projects">View Projects</a>
             </Button>
 
-            <Button
-  asChild
-  size="lg"
-  variant="outline"
-  className="border-primary/50 text-primary hover:bg-primary/10 gap-2"
->
-  <a
-    href={resumePdf}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FileText size={18} />
-    Resume
-  </a>
-</Button>
-
+            <Button asChild size="lg" variant="outline">
+              <a href={resumePdf} target="_blank" rel="noopener noreferrer">
+                <FileText size={18} />
+                Resume
+              </a>
+            </Button>
           </div>
 
-          {/* Social links */}
+          {/* Socials */}
           <div className="flex gap-4 mt-8 justify-center animate-fade-in-up">
-            <a
-              href="https://github.com/HariPrakash79"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300"
-              aria-label="GitHub"
-            >
-              <Github size={20} />
+            <a href="https://github.com/HariPrakash79" target="_blank" rel="noreferrer">
+              <Github />
             </a>
-            <a
-              href="https://www.linkedin.com/in/hariprakashkarthikeyan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={20} />
+            <a href="https://www.linkedin.com/in/hariprakashkarthikeyan" target="_blank" rel="noreferrer">
+              <Linkedin />
             </a>
-            <a
-              href="mailto:hariprakashkarthikeyanslm@gmail.com"
-              className="p-3 rounded-full bg-secondary hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300"
-              aria-label="Email"
-            >
-              <Mail size={20} />
+            <a href="mailto:hariprakashkarthikeyanslm@gmail.com">
+              <Mail />
             </a>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center">
-          <div className="w-1.5 h-3 bg-primary rounded-full mt-2 animate-pulse" />
         </div>
       </div>
     </section>
