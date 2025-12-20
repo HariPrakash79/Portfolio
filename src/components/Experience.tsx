@@ -61,7 +61,7 @@ const experiences = [
 ];
 
 export function Experience() {
-  const { ref, isInView } = useInView({ threshold: 0.2 });
+  const { ref, isInView } = useInView({ threshold: 0.15 });
 
   return (
     <section id="experience" className="py-24 bg-secondary/30 relative" ref={ref}>
@@ -79,105 +79,81 @@ export function Experience() {
             Professional <span className="text-primary">Experience</span>
           </h2>
           <p className="text-muted-foreground">
-            A track record of building practical, defensible data products and models
-            across healthcare, marketing analytics, and applied dashboards.
+            A track record of driving impact across healthcare analytics, Bayesian
+            marketing modeling, and applied data products.
           </p>
         </div>
 
-        {/* Experience Timeline */}
-        <div className="max-w-3xl mx-auto">
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
-
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className={`relative pl-8 md:pl-0 pb-12 last:pb-0 ${
-                  isInView ? "animate-fade-in-up" : "opacity-0"
-                }`}
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-primary border-4 border-background md:-translate-x-1/2 mt-2" />
-
-                {/* Content */}
-                <div
-                  className={`md:w-1/2 ${
-                    index % 2 === 0
-                      ? "md:pr-12 md:text-right"
-                      : "md:pl-12 md:ml-auto"
-                  }`}
-                >
-                  <div className="bg-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:box-glow-sm">
-                    {/* Header */}
-                    <div
-                      className={`flex items-center gap-3 mb-3 ${
-                        index % 2 === 0 ? "md:flex-row-reverse" : ""
-                      }`}
-                    >
-                      <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                        <Building2 size={18} />
-                      </div>
-                      <div>
-                        <h3 className="font-display font-bold text-lg">
-                          {exp.company}
-                        </h3>
-                        <p className="text-sm text-muted-foreground">{exp.role}</p>
-                      </div>
-                    </div>
-
-                    {/* Meta */}
-                    <div
-                      className={`flex items-center gap-3 text-xs text-muted-foreground mb-4 ${
-                        index % 2 === 0 ? "md:justify-end" : ""
-                      }`}
-                    >
-                      <span className="font-mono">{exp.period}</span>
-                      <span>•</span>
-                      <span>{exp.type}</span>
-                    </div>
-
-                    {/* Highlights */}
-                    <ul className="space-y-2 text-left">
-
-                      {exp.highlights.map((item, i) => (
-    <li className="relative pl-4 text-sm text-muted-foreground leading-relaxed">
-  <span className="absolute left-0 top-2 w-1 h-1 rounded-full bg-primary" />
-  {item}
-</li>
-
-
-                      ))}
-                    </ul>
-                  </div>
+        {/* Experience Grid: 2 per row, last centered */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              className={`bg-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:box-glow-sm
+                ${isInView ? "animate-fade-in-up" : "opacity-0"}
+                ${
+                  index === experiences.length - 1
+                    ? "md:col-span-2 md:max-w-xl md:mx-auto"
+                    : ""
+                }
+              `}
+              style={{ animationDelay: `${index * 0.12}s` }}
+            >
+              {/* Header */}
+              <div className="flex items-center gap-3 mb-3">
+                <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                  <Building2 size={18} />
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-lg">{exp.company}</h3>
+                  <p className="text-sm text-muted-foreground">{exp.role}</p>
                 </div>
               </div>
-            ))}
-          </div>
 
-          {/* LinkedIn CTA */}
-          <div
-            className={`text-center mt-12 ${
-              isInView ? "animate-fade-in-up" : "opacity-0"
-            }`}
-            style={{ animationDelay: "0.5s" }}
+              {/* Meta */}
+              <div className="flex items-center gap-3 text-xs text-muted-foreground mb-4">
+                <span className="font-mono">{exp.period}</span>
+                <span>•</span>
+                <span>{exp.type}</span>
+              </div>
+
+              {/* Highlights */}
+              <ul className="space-y-2 text-left">
+                {exp.highlights.map((item, i) => (
+                  <li
+                    key={i}
+                    className="relative pl-4 text-sm text-muted-foreground leading-relaxed"
+                  >
+                    <span className="absolute left-0 top-2 w-1 h-1 rounded-full bg-primary" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* LinkedIn CTA */}
+        <div
+          className={`text-center mt-12 ${
+            isInView ? "animate-fade-in-up" : "opacity-0"
+          }`}
+          style={{ animationDelay: "0.5s" }}
+        >
+          <Button
+            asChild
+            variant="outline"
+            className="border-primary/50 text-primary hover:bg-primary/10 gap-2"
           >
-            <Button
-              asChild
-              variant="outline"
-              className="border-primary/50 text-primary hover:bg-primary/10 gap-2"
+            <a
+              href="https://www.linkedin.com/in/hariprakashkarthikeyan"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a
-                href="https://www.linkedin.com/in/hariprakashkarthikeyan"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Full Experience on LinkedIn
-                <ExternalLink size={16} />
-              </a>
-            </Button>
-          </div>
+              View Full Experience on LinkedIn
+              <ExternalLink size={16} />
+            </a>
+          </Button>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { ExternalLink, Github, TrendingUp, Activity, Sun } from "lucide-react";
+import { ExternalLink, Github, TrendingUp, Activity, Sun, Twitter, CarTaxiFront } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useInView } from "@/hooks/useInView";
 
@@ -54,6 +54,42 @@ const projects = [
     codeUrl: "https://github.com/HariPrakash79",
     detailsUrl: "https://www.linkedin.com/in/hariprakashkarthikeyan",
   },
+
+
+{
+  id: 4,
+  title: "Streaming Twitter Sentiment Analysis",
+  domain: "Real-Time Data Processing",
+  icon: Twitter,
+  description:
+    "Built a Spark Structured Streaming pipeline in Databricks using the Medallion Architecture (Bronze–Silver–Gold) to process and analyze tweet sentiment data in real time.",
+  impact: [
+    "Designed an end-to-end streaming ETL pipeline using Delta Lake",
+    "Implemented stream monitoring, cleanup, and operational controls",
+    "Produced analytics-ready Gold tables for downstream consumption",
+  ],
+  technologies: ["Python", "PySpark", "Databricks", "Delta Lake"],
+  codeUrl: "https://github.com/HariPrakash79/Twitter_sentiment_analysis",
+  detailsUrl: "https://www.linkedin.com/in/hariprakashkarthikeyan",
+},
+
+{
+  id: 5,
+  title: "Uber & NYC Taxi Network Analysis",
+  domain: "Urban Mobility & Network Science",
+  icon: CarTaxiFront,
+  description:
+    "Analyzed large-scale NYC taxi and ride-hailing data using network science to uncover mobility patterns, demand hubs, and structural inefficiencies in urban transportation.",
+  impact: [
+    "Modeled spatiotemporal ride data as transportation networks",
+    "Identified high-traffic hubs and congestion-prone regions",
+    "Extracted interpretable network metrics for urban mobility insights",
+  ],
+  technologies: ["Python", "Pandas", "NetworkX", "NumPy", "Geospatial Analysis"],
+  codeUrl: "https://github.com/HariPrakash79/Uber_Taxi_Network_Analysis",
+  detailsUrl: "https://www.linkedin.com/in/hariprakashkarthikeyan",
+}
+
 ];
 
 export function Projects() {

@@ -10,29 +10,61 @@ const expertiseCategories = [
   {
     icon: Brain,
     title: "AI / Python Ecosystem",
-    skills: ["PyMC", "NumPyro", "scikit-learn", "Pandas", "TensorFlow"],
+    skills: [
+      "Applied Machine Learning",
+      "scikit-learn",
+      "TensorFlow",
+      "Feature Engineering",
+      "Model Evaluation",
+    ],
   },
   {
     icon: Database,
     title: "Data, AI & MLOps",
-    skills: ["Snowflake", "Databricks", "AWS", "Docker", "MLflow"],
+    skills: [
+      "Databricks",
+      "Apache Spark",
+      "Structured Streaming",
+      "Delta Lake",
+      "AWS",
+      "MLflow",
+    ],
   },
   {
     icon: BarChart3,
     title: "Statistical Methods",
-    skills: ["Bayesian Inference", "Machine Learning", "Causal Inference", "Time Series", "A/B Testing"],
+    skills: [
+      "Bayesian Inference",
+      "Hierarchical Modeling",
+      "Causal Inference",
+      "Time Series Analysis",
+      "A/B Testing",
+    ],
   },
   {
     icon: LineChart,
     title: "Visualization",
-    skills: ["Tableau", "Power BI", "Plotly", "matplotlib", "Streamlit"],
+    skills: [
+      "Plotly",
+      "Streamlit",
+      "Tableau",
+      "Power BI",
+      "Data Storytelling",
+    ],
   },
   {
     icon: Layers,
     title: "Domain Expertise",
-    skills: ["Marketing Mix Modeling", "Healthcare Analytics", "Applied AI", "NLP", "EHR Data", "Clinical Trials"],
+    skills: [
+      "Marketing Mix Modeling",
+      "Healthcare & EHR Analytics",
+      "Urban Mobility & Network Analysis",
+      "NLP & Text Analytics",
+      "Energy & IoT Analytics",
+    ],
   },
 ];
+
 
 export function Expertise() {
   const { ref, isInView } = useInView({ threshold: 0.1 });
