@@ -21,7 +21,6 @@ const projects = [
       "Validated performance using rolling time-based splits and produced interpretable channel contribution estimates",
     ],
     technologies: ["Python", "PyMC", "Pandas", "NumPy", "SQL"],
-    accentColor: "from-primary/20 to-primary/5",
     codeUrl: "https://github.com/HariPrakash79",
     detailsUrl: mmmReport,
   },
@@ -38,7 +37,6 @@ const projects = [
       "Restructured repeated labs into patient-centric formats while preserving timestamps for downstream statistical analysis",
     ],
     technologies: ["Python", "Pandas", "Regex/NLP", "SQL"],
-    accentColor: "from-green-500/20 to-green-500/5",
     codeUrl: "https://github.com/HariPrakash79",
     detailsUrl: ehrReport,
   },
@@ -71,7 +69,6 @@ const projects = [
       "Added outage detection, trend views, and predicted-vs-actual comparisons with error metrics (MAE/RMSE)",
     ],
     technologies: ["Python", "Streamlit", "Plotly", "Pandas", "REST APIs"],
-    accentColor: "from-yellow-500/20 to-yellow-500/5",
     codeUrl: "https://github.com/HariPrakash79",
     detailsUrl: solarReport,
   },
@@ -137,7 +134,6 @@ export function Projects() {
             >
               {/* Gradient accent */}
               <div
-                className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.accentColor}`}
               />
 
               <div className="p-8 md:p-10">
