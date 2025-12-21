@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useInView } from "@/hooks/useInView";
 import mmmReport from "@/assets/report_capstone.pdf";
 import ehrReport from "@/assets/report_crd.pdf";
-import solarReport from "@/assets/solar_report.pdf";
+import solarReport from "@/assets/Buffalo Solar.pdf";
 import twitterReport from "@/assets/Final_Report_DSS.pdf";
 import taxiReport from "@/assets/report_nsa.pdf";
 
