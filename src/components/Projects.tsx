@@ -38,7 +38,7 @@ const projects = [
     ],
     technologies: ["Python", "Pandas", "Regex/NLP", "SQL"],
     codeUrl: "https://github.com/HariPrakash79",
-    detailsUrl: ehrReport,
+    detailsUrl: "https://www.linkedin.com/in/hariprakashkarthikeyan/",
   },
   {
   id: 3,
