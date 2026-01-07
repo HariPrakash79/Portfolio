@@ -1,7 +1,7 @@
 import { Rocket, BarChart3, Brain, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useInView } from "@/hooks/useInView";
-import resumePdf from "@/assets/Hariprakash_Karthikeyan_resume.pdf";
+import resumePdf from "@/assets/Hariprakash_Karthikeyan_ml_resume.pdf";
 
 const capabilities = [
   {

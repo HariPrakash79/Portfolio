@@ -3,7 +3,7 @@ import { Github, Linkedin, FileText, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import profilePhoto from "@/assets/cartoon-portfolio.png";
-import resumePdf from "@/assets/Hariprakash_Karthikeyan_resume.pdf";
+import resumePdf from "@/assets/Hariprakash_Karthikeyan_ml_resume.pdf";
 
 type Badge = {
   label: string;
