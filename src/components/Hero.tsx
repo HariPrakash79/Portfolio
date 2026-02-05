@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Github, Linkedin, FileText, Mail } from "lucide-react";
+import { Github, Linkedin, FileText, Mail, Rss, PenLine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import profilePhoto from "@/assets/cartoon-portfolio.png";
@@ -223,6 +223,16 @@ export function Hero() {
             </a>
             <a href="https://www.linkedin.com/in/hariprakashkarthikeyan" target="_blank" rel="noreferrer">
               <Linkedin />
+            </a>
+            <a
+              href="https://substack.com/@hariprakashkarthikeyan?utm_campaign=profile&utm_medium=profile-page"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Rss />
+            </a>
+            <a href="https://medium.com/@hariprakashkarthikeyan" target="_blank" rel="noreferrer">
+              <PenLine />
             </a>
             <a href="mailto:hariprakashkarthikeyanslm@gmail.com">
               <Mail />
