@@ -122,8 +122,7 @@ export function Hero() {
             key={i}
             className="orbit-symbol"
             style={{
-             transform: `rotateY(${deg}deg) translateZ(var(--orbit-radius)) rotateY(${-deg}deg)`,
-
+              ["--orbit-angle" as never]: `${deg}deg`,
               animationDelay: `${i * 0.2}s`,
             }}
           >

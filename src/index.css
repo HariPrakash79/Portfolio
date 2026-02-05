@@ -209,9 +209,7 @@
   z-index: 0;
   transition: opacity 0.3s ease;
 }
-/* ===== Orbiting Symbols (3D, Y-axis, full revolution) ===== */
-
-/* Full overlay */
+/* ===== Orbiting Symbols (Cartoon Stars) ===== */
 .orbit-anchor {
   position: absolute;
   inset: 0;
@@ -219,35 +217,38 @@
   pointer-events: none;
 }
 
-/* SUN = head position */
+/* Anchor the orbit around the head */
 .orbit-center {
-   perspective: 1200px;
-
   position: absolute;
-  left: 48%;
-  top: 18%;
+  left: 47%;
+  top: 16%;
   transform: translate(-50%, -50%);
 
-  --orbit-size: 210px;
-  --orbit-radius: 88px;
+  --orbit-size: 170px;
+  --orbit-radius: 70px;
 
   width: var(--orbit-size);
   height: var(--orbit-size);
 
   perspective: 900px;
   transform-style: preserve-3d;
+
+  /* Show only the top arc without a hard cut line */
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 78%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 78%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
-/* Rotates the whole ring around Y axis */
+/* Spins the ring around the head */
 .orbit-rotator {
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
   animation: orbit-spin-y 7s linear infinite;
 
-  transform: translateZ(-18px);
+  transform: translateZ(-68px);
 }
-
 
 /* Individual symbols */
 .orbit-symbol {
@@ -264,27 +265,25 @@
     0 0 14px rgba(140, 220, 255, 0.9),
     0 0 32px rgba(140, 220, 255, 0.8);
 
+  transform: rotateY(var(--orbit-angle)) translateZ(var(--orbit-radius))
+    rotateY(calc(var(--orbit-angle) * -1));
   transform-style: preserve-3d;
   backface-visibility: hidden;
 
   opacity: 0.95;
   transition: opacity 0.25s linear, filter 0.25s linear;
 
-  animation: orbit-twinkle 3.2s ease-in-out infinite;
+  animation: orbit-twinkle 2.2s ease-in-out infinite;
 }
 
-/* Y-axis revolution */
 @keyframes orbit-spin-y {
   from {
-    transform: translateZ(-60px) rotateX(-10deg) rotateY(0deg);
+    transform: translateZ(-68px) rotateX(-6deg) rotateY(0deg);
   }
   to {
-    transform: translateZ(-60px) rotateX(-10deg) rotateY(360deg);
+    transform: translateZ(-68px) rotateX(-6deg) rotateY(360deg);
   }
 }
-
-
-
 
 /* Shimmer */
 @keyframes orbit-twinkle {
