@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220" />
+      <stop offset="100%" stop-color="#0f1b2e" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#bg)" />
+  <rect x="24" y="24" width="464" height="464" rx="110" fill="none" stroke="#90d5ff" stroke-opacity="0.3" stroke-width="6" />
+  <text
+    x="50%"
+    y="54%"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Segoe UI, Inter, Arial, sans-serif"
+    font-size="220"
+    font-weight="700"
+    letter-spacing="8"
+    fill="#90d5ff"
+  >
+    HK
+  </text>
+</svg>
