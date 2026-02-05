@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Github, Linkedin, FileText, Mail, Feather, Bookmark } from "lucide-react";
+import { Github, Linkedin, FileText, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 import profilePhoto from "@/assets/cartoon-portfolio.png";
 import resumePdf from "@/assets/Hariprakash_Karthikeyan_ml_resume.pdf";
@@ -218,25 +219,74 @@ export function Hero() {
 
           {/* Socials */}
           <div className="flex gap-4 mt-8 justify-center animate-fade-in-up">
-            <a href="https://github.com/HariPrakash79" target="_blank" rel="noreferrer">
-              <Github />
-            </a>
-            <a href="https://www.linkedin.com/in/hariprakashkarthikeyan" target="_blank" rel="noreferrer">
-              <Linkedin />
-            </a>
-            <a href="mailto:hariprakashkarthikeyanslm@gmail.com">
-              <Mail />
-            </a>
-            <a
-              href="https://substack.com/@hariprakashkarthikeyan?utm_campaign=profile&utm_medium=profile-page"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Feather />
-            </a>
-            <a href="https://medium.com/@hariprakashkarthikeyan" target="_blank" rel="noreferrer">
-              <Bookmark />
-            </a>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href="https://github.com/HariPrakash79"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                  className="inline-flex h-5 w-5 items-center justify-center"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>GitHub</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href="https://www.linkedin.com/in/hariprakashkarthikeyan"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  className="inline-flex h-5 w-5 items-center justify-center"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>LinkedIn</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href="mailto:hariprakashkarthikeyanslm@gmail.com"
+                  aria-label="Email"
+                  className="inline-flex h-5 w-5 items-center justify-center"
+                >
+                  <Mail className="h-5 w-5" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>Email</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href="https://substack.com/@hariprakashkarthikeyan?utm_campaign=profile&utm_medium=profile-page"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Substack"
+                  className="inline-flex h-5 w-5 items-center justify-center"
+                >
+                  <i className="si si-substack social-brand-outline" aria-hidden="true" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>Substack</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href="https://medium.com/@hariprakashkarthikeyan"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Medium"
+                  className="inline-flex h-5 w-5 items-center justify-center"
+                >
+                  <i className="si si-medium social-brand-outline" aria-hidden="true" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>Medium</TooltipContent>
+            </Tooltip>
           </div>
         </div>
       </div>

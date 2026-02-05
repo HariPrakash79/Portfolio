@@ -148,6 +148,20 @@
   }
 }
 
+.social-brand-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: hsl(var(--foreground));
+  -webkit-text-stroke: 1.6px currentColor;
+  -webkit-text-fill-color: transparent;
+  vertical-align: middle;
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
