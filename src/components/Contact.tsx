@@ -75,16 +75,16 @@ export function Contact() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 flex-1"
+                  className="flex items-center gap-4 flex-1 min-w-0"
                 >
                   <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                     <link.icon size={20} />
                   </div>
-                  <div className="text-left">
+                  <div className="text-left min-w-0">
                     <p className="text-xs text-muted-foreground uppercase tracking-wider">
                       {link.label}
                     </p>
-                    <p className="font-medium text-foreground group-hover:text-primary transition-colors duration-200">
+                    <p className="font-medium text-foreground group-hover:text-primary transition-colors duration-200 break-words">
                       {link.value}
                     </p>
                   </div>
