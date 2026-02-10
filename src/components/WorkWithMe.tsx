@@ -69,20 +69,20 @@ export function WorkWithMe() {
                 </a>
               </Button>
               <Button
-  asChild
-  size="lg"
-  variant="outline"
-  className="border-primary/50 text-primary hover:bg-primary/10"
->
-  <a
-    href={resumePdf}
-    target="_blank"
-    rel="noopener noreferrer"
-    download
-  >
-    Download Resume
-  </a>
-</Button>
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary"
+              >
+                <a
+                  href={resumePdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  Download Resume
+                </a>
+              </Button>
 
             </div>
           </div>

@@ -177,13 +177,19 @@ export function Writing() {
             </div>
 
             <div className="flex justify-center mt-12">
-              <Button asChild size="lg" variant="outline" className="border-primary/40 text-primary">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary"
+              >
                 <a
                   href="https://substack.com/@hariprakashkarthikeyan"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Read My Other Posts on Substack
+                  <ExternalLink size={16} />
                 </a>
               </Button>
             </div>

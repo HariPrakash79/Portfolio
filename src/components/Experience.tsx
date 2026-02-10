@@ -143,7 +143,7 @@ export function Experience() {
           <Button
             asChild
             variant="outline"
-            className="border-primary/50 text-primary hover:bg-primary/10 gap-2"
+            className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary gap-2"
           >
             <a
               href="https://www.linkedin.com/in/hariprakashkarthikeyan"
