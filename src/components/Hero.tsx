@@ -273,20 +273,6 @@ export function Hero() {
               </TooltipTrigger>
               <TooltipContent>Substack</TooltipContent>
             </Tooltip>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <a
-                  href="https://medium.com/@hariprakashkarthikeyan"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Medium"
-                  className="inline-flex h-5 w-5 items-center justify-center"
-                >
-                  <i className="si si-medium social-brand-outline" aria-hidden="true" />
-                </a>
-              </TooltipTrigger>
-              <TooltipContent>Medium</TooltipContent>
-            </Tooltip>
           </div>
         </div>
       </div>
