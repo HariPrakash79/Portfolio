@@ -1,4 +1,4 @@
-import { ExternalLink, Github, TrendingUp, Twitter, CarTaxiFront, Music, Nut } from "lucide-react";
+import { ExternalLink, Github, TrendingUp, Twitter, CarTaxiFront, Music, Bolt } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useInView } from "@/hooks/useInView";
 import mmmReport from "@/assets/report_capstone.pdf";
@@ -58,7 +58,7 @@ const projects = [
     id: 4,
     title: "Solder Joint Quality Prediction (XRay Baseline + MobileNet + Regression + Demo)",
     domain: "Manufacturing AI & Computer Vision",
-    icon: Nut,
+    icon: Bolt,
     description:
       "Built an end-to-end ML pipeline to classify solder joint quality from XRay images using the HellaStudy-of-LEDs dataset by converting void-rate measurements into defect labels and training scalable image models for automated inspection.",
     impact: [
