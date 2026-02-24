@@ -1,15 +1,13 @@
-import { ExternalLink, Github, TrendingUp, Activity, Sun, Twitter, CarTaxiFront } from "lucide-react";
+import { ExternalLink, Github, TrendingUp, Activity, Twitter, CarTaxiFront } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useInView } from "@/hooks/useInView";
 import mmmReport from "@/assets/report_capstone.pdf";
-import ehrReport from "@/assets/report_crd.pdf";
-import solarReport from "@/assets/Buffalo Solar.pdf";
 import twitterReport from "@/assets/Final_Report_DSS.pdf";
 import taxiReport from "@/assets/report_nsa.pdf";
 
 const projects = [
   {
-    id: 1,
+    id: 5,
     title: "Hierarchical Bayesian Media Mix Modeling (MMM)",
     domain: "Marketing Analytics",
     icon: TrendingUp,
@@ -24,21 +22,21 @@ const projects = [
     codeUrl: "https://github.com/HariPrakash79",
     detailsUrl: mmmReport,
   },
-  {
-    id: 2,
-    title: "EHR Analytics & Cardiac Phenotyping from Echo Notes",
-    domain: "Healthcare Data Science",
+    {
+    id: 1,
+    title: "Real time Spotify Music Assistant using AWS and LLM",
+    domain: "Cloud Data Engineering & Recommender Systems",
     icon: Activity,
     description:
-      "Created an analysis-ready patient-level dataset from fragmented EHR/REDCap sources and extracted clinically meaningful cardiac phenotypes from unstructured echocardiogram narratives using robust rule-based NLP.",
+      "Built an AWS-based, cloud-first music data pipeline that ingests multi-source datasets directly into S3 (no local storage), normalizes to SQL-ready Parquet, streams events with Kafka, and enables real-time recommendation/chat workflows.",
     impact: [
-      "Merged datasets via MRN-based linkage with admission–discharge temporal alignment for episode-level matching",
-      "Extracted numeric and qualitative findings (e.g., LVEF, wall motion abnormalities, valvular disease) using regex + context/negation logic",
-      "Restructured repeated labs into patient-centric formats while preserving timestamps for downstream statistical analysis",
+      "Developed workflows to normalize large-scale listening logs and track metadata into SQL-ready Parquet datasets",
+      "Designed PostgreSQL serving schemas for tracks, events, and user features to support recommendation use cases",
+      "Implemented Kafka producers and topic contracts for low-latency event streaming and future LLM assistant capabilities",
     ],
-    technologies: ["Python", "Pandas", "Regex/NLP", "SQL"],
-    codeUrl: "https://github.com/HariPrakash79",
-    detailsUrl: "https://www.linkedin.com/in/hariprakashkarthikeyan/",
+    technologies: ["Python", "S3", "IAM", "Kafka", "SQL", "Parquet", "RDS", "Bedrock"],
+    codeUrl: "https://github.com/HariPrakash79/spotify-realtime-music-assistant.git",
+    detailsUrl: "https://github.com/HariPrakash79/spotify-realtime-music-assistant.git",
   },
   {
   id: 3,
@@ -58,24 +56,24 @@ const projects = [
 },
   {
     id: 4,
-    title: "SolarEdge + CPS Analytics Dashboard (468+ Sites)",
-    domain: "Data Analytics & Dashboards",
-    icon: Sun,
+    title: "Solder Joint Quality Prediction (XRay Baseline + MobileNet + Regression + Demo)",
+    domain: "Manufacturing AI & Computer Vision",
+    icon: Activity,
     description:
-      "Built a unified Streamlit + Plotly dashboard to monitor, visualize, and compare energy performance across SolarEdge API sites and CPS Excel-based sites with outage detection and forecast comparison.",
+      "Built an end-to-end ML pipeline to classify solder joint quality from XRay images using the HellaStudy-of-LEDs dataset by converting void-rate measurements into defect labels and training scalable image models for automated inspection.",
     impact: [
-      "Automated SolarEdge data ingestion via Monitoring API and removed the need for manual site-by-site CSV handling",
-      "Implemented dynamic directory scanning and multi-year merging for CPS .xlsx files per site",
-      "Added outage detection, trend views, and predicted-vs-actual comparisons with error metrics (MAE/RMSE)",
+      "Developed baseline CNN, MobileNetV2 fine-tuning, and EfficientNetV2 regression workflows with panel-level splits to reduce leakage",
+      "Tuned label and decision thresholds to reach high defect recall (~0.95), reducing missed defects in quality screening",
+      "Delivered a Streamlit single-image inference demo with configurable thresholds and a clear path to FastAPI-based production serving",
     ],
-    technologies: ["Python", "Streamlit", "Plotly", "Pandas", "REST APIs"],
-    codeUrl: "https://github.com/HariPrakash79",
-    detailsUrl: solarReport,
+    technologies: ["Python", "TensorFlow", "MobileNetV2", "EfficientNetV2", "Pandas", "Streamlit"],
+    codeUrl: "https://github.com/HariPrakash79/solder-joint-quality-prediction",
+    detailsUrl: "https://github.com/HariPrakash79/solder-joint-quality-prediction",
   },
 
 
 {
-  id: 5,
+  id: 2,
   title: "Streaming Twitter Sentiment Analysis",
   domain: "Real-Time Data Processing",
   icon: Twitter,
@@ -234,3 +232,6 @@ export function Projects() {
     </section>
   );
 }
+
+
+
