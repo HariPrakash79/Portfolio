@@ -1,4 +1,4 @@
-import { ExternalLink, Github, TrendingUp, Activity, Twitter, CarTaxiFront } from "lucide-react";
+import { ExternalLink, Github, TrendingUp, Twitter, CarTaxiFront, Music, Nut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useInView } from "@/hooks/useInView";
 import mmmReport from "@/assets/report_capstone.pdf";
@@ -26,7 +26,7 @@ const projects = [
     id: 1,
     title: "Real time Spotify Music Assistant using AWS and LLM",
     domain: "Cloud Data Engineering & Recommender Systems",
-    icon: Activity,
+    icon: Music,
     description:
       "Built an AWS-based, cloud-first music data pipeline that ingests multi-source datasets directly into S3 (no local storage), normalizes to SQL-ready Parquet, streams events with Kafka, and enables real-time recommendation/chat workflows.",
     impact: [
@@ -58,7 +58,7 @@ const projects = [
     id: 4,
     title: "Solder Joint Quality Prediction (XRay Baseline + MobileNet + Regression + Demo)",
     domain: "Manufacturing AI & Computer Vision",
-    icon: Activity,
+    icon: Nut,
     description:
       "Built an end-to-end ML pipeline to classify solder joint quality from XRay images using the HellaStudy-of-LEDs dataset by converting void-rate measurements into defect labels and training scalable image models for automated inspection.",
     impact: [
@@ -122,7 +122,7 @@ export function Projects() {
 
         {/* Projects Grid */}
         <div className="space-y-8">
-          {projects.map((project, index) => (
+          {[...projects].sort((a, b) => a.id - b.id).map((project, index) => (
             <div
               key={project.id}
               className={`group relative bg-card rounded-2xl border border-border overflow-hidden hover:border-primary/50 transition-all duration-500 hover:box-glow-sm ${
