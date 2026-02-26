@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 import profilePhoto from "@/assets/cartoon-portfolio.png";
-import resumePdf from "@/assets/Hariprakash_Karthikeyan_ml_resume.pdf";
 
 type Badge = {
   label: string;
@@ -210,7 +209,7 @@ export function Hero() {
             </Button>
 
             <Button asChild size="lg" variant="outline">
-              <a href={resumePdf} target="_blank" rel="noopener noreferrer">
+              <a href="/resume" target="_blank" rel="noopener noreferrer">
                 <FileText size={18} />
                 Resume
               </a>
