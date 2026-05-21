@@ -1,4 +1,4 @@
-# Data Insight Hub — Portfolio Website
+# Portfolio Website
 
 Personal portfolio for Hariprakash Karthikeyan, Data Scientist and ML/AI Engineer specializing in Bayesian modeling, marketing analytics, and healthcare data science.
 
