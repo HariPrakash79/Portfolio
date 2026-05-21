@@ -1,73 +1,63 @@
-# Welcome to your Lovable project
+# Data Insight Hub — Portfolio Website
 
-## Project info
+Personal portfolio for Hariprakash Karthikeyan, Data Scientist and ML/AI Engineer specializing in Bayesian modeling, marketing analytics, and healthcare data science.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Tech Stack
 
-## How can I edit this code?
+- **React 18** + **TypeScript** — component-based UI with full type safety
+- **Vite** — fast dev server and build tool (port 8080)
+- **Tailwind CSS** + **shadcn-ui** — utility-first styling with accessible headless components
+- **React Router v6** — client-side routing
+- **TanStack Query** — async state management
+- **Recharts** — data visualizations
+- **Netlify** — deployment and hosting
 
-There are several ways of editing your application.
+## Project Structure
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── pages/
+│   ├── Index.tsx       # Main portfolio landing page
+│   ├── Resume.tsx      # Resume / CV page
+│   └── NotFound.tsx    # 404 page
+├── components/
+│   ├── Hero.tsx
+│   ├── About.tsx
+│   ├── Projects.tsx
+│   ├── Expertise.tsx
+│   ├── Experience.tsx
+│   ├── Writing.tsx
+│   ├── WorkWithMe.tsx
+│   ├── Contact.tsx
+│   ├── Navigation.tsx
+│   └── ui/             # shadcn-ui component library
+├── assets/             # Images, PDF resume, project reports
+├── hooks/
+└── lib/utils.ts
 ```
 
-**Edit a file directly in GitHub**
+## Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+**Prerequisites:** Node.js 18+ and npm (or Bun)
 
-**Use GitHub Codespaces**
+```sh
+# Install dependencies
+npm install
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Start development server
+npm run dev
+# → http://localhost:8080
 
-## What technologies are used for this project?
+# Production build
+npm run build
 
-This project is built with:
+# Preview production build locally
+npm run preview
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Lint
+npm run lint
+```
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The site is deployed on Netlify. Push to the main branch to trigger a deploy. Routing is configured via `netlify.toml` to support client-side navigation.
