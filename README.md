@@ -1,5 +1,7 @@
 # Portfolio Website
 
+**Live site:** [hariprakashkarthikeyan.netlify.app](https://hariprakashkarthikeyan.netlify.app/)
+
 Personal portfolio for Hariprakash Karthikeyan, Data Scientist and ML/AI Engineer specializing in Bayesian modeling, marketing analytics, and healthcare data science.
 
 ## Tech Stack
