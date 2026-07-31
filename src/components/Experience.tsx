@@ -4,14 +4,14 @@ import { useInView } from "@/hooks/useInView";
 
 const experiences = [
   {
-    company: "University of Rochester Medical Center",
-    role: "Research Assistant (EHR Analytics & Cardiac Phenotyping)",
-    period: "Sep 2025 – Dec 2025",
-    type: "Healthcare Data",
+    company: "Community Dreams Foundation",
+    role: "AI Engineer",
+    period: "Mar 2026 – Present",
+    type: "Applied AI / RAG",
     highlights: [
-      "Built an analysis-ready patient-level dataset from fragmented REDCap/EHR tables and multiple hospitalizations",
-      "Extracted cardiac phenotypes from unstructured echocardiogram narratives using robust rule-based NLP (regex + context/negation handling)",
-      "Aligned MRN-linked encounters with admission–discharge windows and preserved lab timestamps for downstream ML/statistical analysis",
+      "Built and deployed a production RAG chatbot (LangChain, FAISS, OpenAI, Streamlit) serving CDF volunteers organization-wide, grounding all answers in official documents with source citations and zero hallucination",
+      "Designed an 82-question evaluation framework using real FAQ Q&A pairs, synthetic questions, and hallucination traps, scoring accuracy and grounding independently via LLM-as-judge to measure and validate model quality",
+      "Drove answer accuracy from 45% to 89.2% through a structured two-phase retrieval tuning study across 5 configs, selecting chunk=1500/k=12 based on measurable performance gains across 4 evaluation metrics",
     ],
   },
   {
@@ -34,6 +34,17 @@ const experiences = [
       "Built an interactive Streamlit + Plotly analytics dashboard to monitor performance across 468+ SolarEdge and CPS sites",
       "Automated ingestion using SolarEdge Monitoring API and dynamic merging of multi-year CPS Excel files per site",
       "Implemented outage detection thresholds and prediction-vs-actual comparison with error metrics for performance tracking",
+    ],
+  },
+  {
+    company: "University of Rochester Medical Center",
+    role: "Research Assistant (EHR Analytics & Cardiac Phenotyping)",
+    period: "Feb 2025 – May 2025",
+    type: "Healthcare Data",
+    highlights: [
+      "Built an analysis-ready patient-level dataset from fragmented REDCap/EHR tables and multiple hospitalizations",
+      "Extracted cardiac phenotypes from unstructured echocardiogram narratives using robust rule-based NLP (regex + context/negation handling)",
+      "Aligned MRN-linked encounters with admission–discharge windows and preserved lab timestamps for downstream ML/statistical analysis",
     ],
   },
   {
@@ -92,7 +103,7 @@ export function Experience() {
               className={`bg-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:box-glow-sm
                 ${isInView ? "animate-fade-in-up" : "opacity-0"}
                 ${
-                  index === experiences.length - 1
+                  experiences.length % 2 === 1 && index === experiences.length - 1
                     ? "md:col-span-2 md:max-w-xl md:mx-auto"
                     : ""
                 }

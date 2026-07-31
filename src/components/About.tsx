@@ -17,13 +17,13 @@ const highlights = [
   {
     icon: Award,
     label: "Specialty",
-    value: "Bayesian Methods",
-    sublabel: "Marketing & Healthcare",
+    value: "Bayesian & LLM Systems",
+    sublabel: "Marketing, Healthcare & RAG",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "United States",
+    value: "Seattle, WA",
     sublabel: "Open to Relocation",
   },
 ];
@@ -54,11 +54,21 @@ export function About() {
 
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I'm a data scientist with a passion for applying rigorous statistical 
-                methods to solve complex business problems. My expertise lies at the 
-                intersection of Bayesian inference, marketing analytics, and healthcare 
-                data science.
+                I'm a data scientist with a passion for applying rigorous statistical
+                methods to solve complex business problems. My expertise lies at the
+                intersection of Bayesian inference, marketing analytics, healthcare
+                data science, and applied LLM systems.
               </p>
+          <p>
+  As an <span className="text-foreground">AI Engineer at Community Dreams Foundation</span>,
+  I built and deployed a production{" "}
+  <span className="text-foreground">RAG chatbot</span> (LangChain, FAISS, OpenAI,
+  Streamlit) serving volunteers organization-wide, grounding every answer in
+  official documents with source citations. I designed an 82-question
+  evaluation framework scored via LLM-as-judge and used it to drive a
+  structured retrieval tuning study that lifted answer accuracy from 45% to
+  89.2%.
+</p>
           <p>
   At the <span className="text-foreground">University of Rochester Medical Center</span>,
   I worked with large-scale EHR and REDCap data, building analysis-ready

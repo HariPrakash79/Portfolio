@@ -16,7 +16,7 @@ const floatingBadges: Badge[] = [
   { label: "Marketing Analytics", position: "top-[2%] right-[0%]", delayMs: 150 },
   { label: "Healthcare EHR NLP", position: "top-[48%] -right-[16%]", delayMs: 300 },
   { label: "Python", position: "bottom-[18%] -left-[14%]", delayMs: 450 },
-  { label: "SQL", position: "bottom-[6%] right-[6%]", delayMs: 600 },
+  { label: "RAG / LangChain", position: "bottom-[6%] right-[6%]", delayMs: 600 },
 ];
 
 
@@ -107,58 +107,37 @@ export function Hero() {
 
             <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border border-primary/30 bg-card/40 backdrop-blur-sm shadow-lg">
 
-            
-{/* Circular avatar */}
-<div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border border-primary/30 bg-card/40 backdrop-blur-sm shadow-lg">
+              {/* Orbiting symbols around HEAD (not the whole circle) */}
+              <div className="orbit-anchor pointer-events-none">
+                <div className="orbit-center">
+                  <div className="orbit-rotator">
+                    {["ML", "AI", "Σ", "β", "μ", "SQL", "Py", "∫"].map((item, i, arr) => {
+                      const deg = (360 / arr.length) * i;
+                      return (
+                        <span
+                          key={i}
+                          className="orbit-symbol"
+                          style={{
+                            ["--orbit-angle" as never]: `${deg}deg`,
+                            animationDelay: `${i * 0.2}s`,
+                          }}
+                        >
+                          {item}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
 
-{/* Orbiting symbols around HEAD (not the whole circle) */}
-<div className="orbit-anchor pointer-events-none">
-  <div className="orbit-center">
-    <div className="orbit-rotator">
-      {["ML", "AI", "Σ", "β", "μ", "SQL", "Py", "∫"].map((item, i, arr) => {
-        const deg = (360 / arr.length) * i;
-        return (
-          <span
-            key={i}
-            className="orbit-symbol"
-            style={{
-              ["--orbit-angle" as never]: `${deg}deg`,
-              animationDelay: `${i * 0.2}s`,
-            }}
-          >
-            {item}
-          </span>
-        );
-      })}
-    </div>
-  </div>
-</div>
-
-
-
-  {/* Avatar image */}
-  <img
-    src={profilePhoto}
-    alt="Hariprakash Karthikeyan"
-    className="w-full h-full object-cover object-center"
-  />
-
-  {/* Blend overlay */}
-  <div className="absolute inset-0 bg-gradient-to-t from-background/45 via-transparent to-transparent" />
-</div>
-
-
-
-
-
-
-
+              {/* Avatar image */}
               <img
                 src={profilePhoto}
                 alt="Hariprakash Karthikeyan"
                 className="w-full h-full object-cover object-center"
               />
 
+              {/* Blend overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-background/45 via-transparent to-transparent" />
             </div>
 
@@ -197,8 +176,8 @@ export function Hero() {
             </p>
             <p className="mt-4 text-base md:text-lg text-muted-foreground/80 leading-relaxed">
               My work spans hierarchical Bayesian media mix modeling, rule-based NLP
-              for cardiac phenotyping, and analytics dashboards that turn messy
-              multi-source data into usable insights.
+              for cardiac phenotyping, and production RAG systems that ground LLM
+              answers in source documents with measurable accuracy.
             </p>
           </div>
 

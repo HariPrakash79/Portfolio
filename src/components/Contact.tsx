@@ -110,7 +110,7 @@ export function Contact() {
           {/* Location */}
           <div className={`flex items-center justify-center gap-2 text-muted-foreground ${isInView ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: "0.4s" }}>
             <MapPin size={16} className="text-primary" />
-            <span>Based in the United States</span>
+            <span>Based in Seattle, WA</span>
           </div>
         </div>
       </div>
